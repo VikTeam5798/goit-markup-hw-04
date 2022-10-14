@@ -5,6 +5,7 @@
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --primary-bgc-color: #fff;
+  --primary-svg-color: #afb1b8;
   --card-set-gap: 30px;
 }
 
@@ -29,7 +30,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 
-  /* outline: 2px solid tomato; */
+  /* outline: 2px solid teal; */
 }
 
 h1,
@@ -64,6 +65,16 @@ img {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+.icon-contacts {
+  display: inline-flex;
+  align-items: center;
+  color: #afb1b8;
+  margin-right: 10px;
+}
+
+.menu-contacts {
+  display: inline-flex;
 }
 
 .page-container {
@@ -113,6 +124,10 @@ img {
 .nav-link:focus {
   color: var(--accent-color);
 }
+.auth-nav {
+  display: flex;
+  align-items: center;
+}
 .header .auth-nav {
   font-weight: 500;
   line-height: 1.14;
@@ -122,7 +137,9 @@ img {
 .header .auth-nav:hover,
 .header .auth-nav:focus {
   color: var(--accent-color);
+  fill: var(--accent-color);
 }
+
 .button {
   border-radius: 4px;
   border-color: transparent;
@@ -178,9 +195,20 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.overlay {
+.section.hero.overlay {
+  height: 600px;
   max-width: 1600px;
-  background-color: #2196f3;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/backgroundimg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero.secondary {
@@ -219,8 +247,15 @@ ul {
   margin-bottom: 50px;
   text-align: center;
 }
-.container-advantages {
+.icon-advanteges {
+  height: 120px;
   width: 270px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f4fa;
+  border-radius: 4px;
 }
 
 .about {
@@ -270,11 +305,11 @@ ul {
   margin-top: calc(-1 * var(--card-set-gap));
 }
 .team-content {
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 16px;
 }
 .item-team {
   width: 270px;
-  height: 368px;
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
 
@@ -283,6 +318,32 @@ ul {
 .team {
   padding-bottom: 94px;
   background-color: #f5f4fa;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.icon {
+  height: 20px;
+  width: 20px;
+  fill: currentColor;
+}
+
+.link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  color: var(--primary-svg-color);
+}
+.link-icon:hover,
+.link-icon:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-bgc-color);
 }
 
 .advantages {
@@ -293,12 +354,52 @@ ul {
   display: flex;
   gap: 30px;
 }
+.clients-title {
+  text-align: center;
+  margin-bottom: 50px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+
+  color: var(--title-text-color);
+}
+.clients {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+
+  /* outline: 1px solid tomato; */
+}
+
+.client-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  height: 92px;
+  width: 170px;
+  fill: var(--primary-svg-color);
+  border: 1px solid var(--primary-svg-color);
+  border-radius: 4px;
+}
+
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
 
 /* ----------------------Футер---------------------- */
 
 .footer {
   background: #2f303a;
   padding: 60px 0;
+}
+
+.footer-info {
+  text-align: center;
 }
 .footer-list:not(:last-child) {
   margin-bottom: 9px;
@@ -339,6 +440,38 @@ ul {
 .footer-accent {
   color: var(--primary-bgc-color);
 }
+.foot-er {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-title {
+  color: var(--primary-bgc-color);
+  margin-bottom: 20px;
+}
+.social-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.footer-info {
+  text-align: left;
+}
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  color: var(--primary-bgc-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-icon:hover,
+.footer-icon:hover {
+  background-color: var(--accent-color);
+}
 
 /* ----------------------portfolio.html---------------------- */
 
@@ -347,21 +480,20 @@ ul {
 }
 .progect-name {
   line-height: 2;
-  display: flex;
+
   font-size: 18px;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
-  margin-left: auto;
+
   margin-bottom: 4px;
 }
 
 .description {
   line-height: 1.88;
-  display: flex;
+
   letter-spacing: 0.03em;
   font-size: 16px;
   color: var(--primary-text-color);
-  margin-left: auto;
 }
 
 .card-set .item {
@@ -380,9 +512,12 @@ ul {
   margin-top: calc(-1 * var(--card-set-gap));
 }
 
-.item * {
-  /* outline: 1px solid red; */
-}
 .card-content {
   padding: 20px 24px;
+}
+.item:hover,
+.item:focus {
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
